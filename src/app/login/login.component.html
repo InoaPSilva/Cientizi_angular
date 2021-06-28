@@ -11,7 +11,7 @@
 			<img src="./assets/img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form [formGroup] ='form' (ngSubmit)="login()">
 				<img src="./assets/img/avatar.svg">
 				<h2 class="title">Bem vindo</h2>
            		<div class="input-div one">
@@ -19,8 +19,8 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Nome de usuário</h5>
-           		   		<input type="text" class="input">
+           		   		<h5>email</h5>
+           		   		<input type="text" class="input" formControlName="email">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -29,11 +29,11 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Senha</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" class="input" formControlName="name">
             	   </div>
             	</div>
             	<a href="#">Esqueceu sua senha?</a>
-            	<input type="submit" class="btn" value="Entrar">
+            	<button type="submit" class="btn" value="Entrar"></button>
             </form>
         </div>
     </div>
