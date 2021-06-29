@@ -1,3 +1,5 @@
+import { UserService } from '../user.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectPageComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private posted: UserService) {}
+
+  auth = localStorage.getItem("token");
+
+  getProfile(){
+    this.posted.getProfile(this.auth);
+  }
+  getProject(){
+    this.posted.getProject();
+  }
 
   ngOnInit(): void {
+    this.getProfile();
+    this.getProject();
+
   }
 
 }

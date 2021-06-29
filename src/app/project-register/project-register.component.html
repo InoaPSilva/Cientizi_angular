@@ -11,23 +11,23 @@
 			<img src="../../assets/img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="#">
+			<form [formGroup] ='form' (ngSubmit)="registerProjc()">
 				<h3>Cadastre seu projeto</h3>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<input type="text" class="input" placeholder="Nome dos projetos">
+           		   		<input type="text" class="input" placeholder="Nome do projeto" formControlName="name">
            		   </div>
            		</div>
 				   <div class="div">
 					<h5>Resumo do projeto</h5>
-					<textarea cols="45" rows="6" class="input"></textarea>
+					<textarea cols="45" rows="6" class="input" formControlName="description"></textarea>
 				</div>
 				<div class="div">
 					<h5>Objetivos do projeto</h5>
-					<textarea cols="45" rows="6" class="input"></textarea>
+					<textarea cols="45" rows="6" class="input" formControlName="objective"></textarea>
 				</div>
 
             	<input type="submit" class="btn" value="Registrar">

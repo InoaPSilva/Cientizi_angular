@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,8 +10,20 @@ export class UserService {
   constructor(private http:HttpClient) { }
   url = 'https://cientizi.herokuapp.com/';
 
-  getProfile(){
-    return this.http.post(this.url + "user/profile", localStorage.token);
+  getProfile(user:any){
+
+    const head= new HttpHeaders({'Authorization': user})
+
+    return this.http.get(this.url + "user/profile", {headers: head}).subscribe(data=>{
+    console.log(data);
+    })
+  }
+
+  getProject(){
+    return this.http.get(this.url + "project/list").subscribe(data=>{
+      console.warn(data);
+      
+    })
   }
 
   postUser(user:any){
@@ -30,6 +42,10 @@ export class UserService {
     });
   }
 
-
+  postProject(user:any, otama:any){
+    const head= new HttpHeaders({'Authorization': otama})
+    return this.http.post(this.url + "project/register", user, {headers:head}).subscribe(data=>{
+      });
+  }
 
 }
