@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { ProjectRegisterComponent } from './project-register/project-register.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProjectRegisterComponent } from './project-register/project-register.co
     RegisterComponent,
     LoginComponent,
     MainComponent,
-    ProjectRegisterComponent
+    ProjectRegisterComponent,
+    ProjectPageComponent
   ],
   imports: [
     BrowserModule,

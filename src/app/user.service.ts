@@ -8,23 +8,28 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   constructor(private http:HttpClient) { }
-  url = 'https://projeteai.herokuapp.com/';
+  url = 'https://cientizi.herokuapp.com/';
 
-  getData(){
-    return this.http.get(this.url + "teacher");
+  getProfile(){
+    return this.http.post(this.url + "user/profile", localStorage.token);
   }
 
   postUser(user:any){
-    return this.http.post(this.url + "register ", user).subscribe(data=>{
+    return this.http.post(this.url + "user/register", user).subscribe(data=>{
     });
 
   }
 
-    postCredentials(user:any){
-    return this.http.post(this.url + "login ", user).subscribe(data=>{
+  postCredentials(user:any){
+    return this.http.post(this.url + "user/login", user).subscribe(data=>{
+      let dataToken = JSON.parse(JSON.stringify(data));
+      
+      localStorage.setItem("token", dataToken.token);
+      console.warn(localStorage.token);
+
     });
+  }
 
 
-    }
-    
+
 }
