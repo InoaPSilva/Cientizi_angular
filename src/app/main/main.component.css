@@ -5,17 +5,7 @@
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    font-family: 'Nunito', sans-serif;
-    font-size: 10px;
     box-sizing: border-box;
-}
-
-body {
-    background: #f0f0f0;
 }
 
 a {
@@ -301,11 +291,12 @@ nav {
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 2.5rem;
+    grid-gap: 0rem;
+    
 }
 
 .activities-grid-item {
-    height: 40rem;
+    height: 42rem;
     padding: 5rem;
     color: #fafafa;
     position: relative;
@@ -329,14 +320,20 @@ nav {
 
 .star-gazing {
     background: url('../../assets/img/stars.jpg') center no-repeat;
+    width: 95%;
+    height: 85%;
 }
 
 .hiking {
     background: url('../../assets/img/hiking.jpg') center no-repeat;
+    width: 95%;
+    height: 85%;
 }
 
 .camping {
     background: url('../../assets/img/camping.jpg') center no-repeat;
+    width: 95%;
+    height: 85%;
 }
 
 .activities-grid-item i {
@@ -505,7 +502,7 @@ nav {
 
 @media screen and (min-width: 950px) {
     .hero::before {
-        height: 22.7rem;
+        height: 7rem;
         background: url("../../assets/img/wave-large.png");
         background-size: cover;
     }

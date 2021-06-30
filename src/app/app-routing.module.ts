@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 import { ProjectRegisterComponent } from "./project-register/project-register.component";
+import { UserPageComponent } from "./user-page/user-page.component";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProjectPageComponent } from "./project-page/project-page.component";
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'project', component:ProjectPageComponent},
+  {path: 'user', component:UserPageComponent},
   {path:'', redirectTo:'/home', pathMatch: 'full'},
   // {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},

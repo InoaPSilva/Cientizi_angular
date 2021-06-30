@@ -4,9 +4,11 @@
 	box-sizing: border-box;
 }
 
-body{
+main{
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+	background-color: #41D282;
+	padding-bottom: 4.5%;
 }
 
 .wave{
@@ -219,4 +221,28 @@ a:hover{
 	.login-content{
 		justify-content: center;
 	}
+}
+
+/* --------------------------------------------------- */
+#workPlease{
+	margin: 80px 450px;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+
+}
+
+#workPleaseTwo{
+	background-color: #fff;
+	padding: 20px 40px;
+	margin: auto 0px;
+	border-radius: 25px;
+}
+
+textArea{
+	border-radius: 5%;
+	resize: none;
+}
+.d h5{
+	text-align: start;
 }
