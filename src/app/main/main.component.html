@@ -108,102 +108,20 @@
         <div class="border-wrapper">
             <h2>Projetos</h2>
         </div>
-        <div class="cards_wrap">
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
+        <mat-grid-list class="component_wrapper" cols="2" rowHeight="2:1">
+            <mat-grid-tile class="cards_wrap" *ngFor="let x of projects; index as i;">
+                <div class="card_item">
+                    <div class="card_inner">
+                        <img src="../../assets/img/profile-pic.jpg" alt="">
+                        <div class="role_name">{{projects[i].name}}</div>
+                        <div class="real_name">alguma coisa</div>
+                        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
+                            dolorem
+                            mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
+                            ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-
-            <div class="card_item">
-                <div class="card_inner">
-                    <img src="../../assets/img/profile-pic.jpg" alt="">
-                    <div class="role_name">Projeto tal</div>
-                    <div class="real_name">alguma coisa</div>
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                        dolorem
-                        mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                        ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
-                </div>
-            </div>
-        </div>
+            </mat-grid-tile>
+        </mat-grid-list>    
     </section>
 </main>

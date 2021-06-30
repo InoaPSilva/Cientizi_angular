@@ -1,3 +1,6 @@
+import { UserService } from '../user.service';
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  projects:any = [{}];
+
+  constructor(private posted: UserService) { }
+
+  getProject(){
+    this.posted.getProject().subscribe(objetos =>{ this.projects.push(objetos)
+    this.projects = this.projects[1].message;    
+
+    console.log(this.projects);
+
+    });    
+  }
 
   ngOnInit(): void {
+  this.getProject();
+  
   }
 
 }

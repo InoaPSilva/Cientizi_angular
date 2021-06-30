@@ -14,11 +14,11 @@ const routes: Routes = [
   {path:'project/register', component: ProjectRegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path:'project', component:ProjectPageComponent},
+  {path:'project/:id', component:ProjectPageComponent},
   {path: 'user', component:UserPageComponent},
   {path:'', redirectTo:'/home', pathMatch: 'full'},
   // {path: '404', component: NotFoundComponent},
-  {path: '**', redirectTo: '404'},
+  // {path: '**', redirectTo: '404'},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

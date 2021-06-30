@@ -13,17 +13,26 @@ export class ProjectPageComponent implements OnInit {
   constructor(private posted: UserService) {}
 
   auth = localStorage.getItem("token");
+  
+  projects:any = [{}];
+  id = "60dca4c1eea6c30004f64bc3";
+
 
   getProfile(){
     this.posted.getProfile(this.auth);
   }
-  getProject(){
-    this.posted.getProject();
+  getProject(id:any){
+    this.posted.getProject().subscribe(objetos =>{ this.projects.push(objetos)
+    this.projects = this.projects[1].message.find(function(x:any){return x._id === id});    
+
+    console.log(this.projects);
+
+    });    
   }
 
   ngOnInit(): void {
     this.getProfile();
-    this.getProject();
+    this.getProject(this.id);
 
   }
 
