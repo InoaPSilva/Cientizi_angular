@@ -349,12 +349,6 @@ nav {
 }
 
 /* Cards */
-.component_wrapper{
-    display: list-item;
-    justify-content: space-between;
-    
-}
-
 .border-wrapper {
     border-bottom: 2px solid #6937ddbe;
     margin-left: 10%;
@@ -378,8 +372,8 @@ nav {
 }
 
 .cards_wrap .card_item {
-    padding: 15px 25px;
-    width: 25%;
+    width: 75%;
+
 }
 
 .cards_wrap .card_inner {
@@ -389,6 +383,7 @@ nav {
     min-width: 225px;
     min-height: 315px;
     width: 100%;
+    
 }
 
 .cards_wrap .card_inner img {

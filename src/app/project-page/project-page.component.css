@@ -26,17 +26,18 @@ main{
 
 #content{    
     background-color: #41D282;
-    width: 950px;
+    width: 910px;
     float: left;
     margin: 20px 5px;  
+    height: 1142px;
     border-radius: 45px 45px 0 45px;
 }
 
 #photo{
     border-radius: 45px 0 0 0;
-    background-image: url("../../assets/img/bees2.jpg");
+    background-image: url("https://projetaiexample.s3.amazonaws.com/73c0fecc156a8fa0b1a7474d90e4c7b8-banner.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .round{
@@ -69,6 +70,10 @@ main{
     padding: 20px;
 }
 /* -------------------------------------------------- */
+.text{
+    height: 55px;
+    overflow-y: auto;
+}
 #side-bar{
     background-color: #41D282;
     height: 1141px;

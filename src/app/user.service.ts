@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import {  HttpClient,
+          HttpHeaders,
+          HttpInterceptor,
+          HttpEvent,
+          HttpResponse, 
+          HttpRequest, 
+          HttpHandler, 
+          HttpErrorResponse } from '@angular/common/http';
+
+import { Observable, of } from 'rxjs';
+import { retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +19,10 @@ export class UserService {
   constructor(private http:HttpClient) { }
   url = 'https://cientizi.herokuapp.com/';
 
+
+  intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return next.handle(httpRequest).pipe(retry(2));
+  }
 
   getProfile(user:any){
     const head= new HttpHeaders({'Authorization': user})
@@ -24,8 +38,7 @@ export class UserService {
   }
 
   postUser(user:any){
-    return this.http.post(this.url + "user/register", user).subscribe(data=>{
-    });
+    return this.http.post(this.url + "user/register", user);
 
   }
 
@@ -37,6 +50,11 @@ export class UserService {
       console.warn(localStorage.token);
 
     });
+  }
+
+  isLoggedIn(){
+      
+      return localStorage.getItem("token");
   }
 
   postProject(user:any, otama:any){

@@ -1,5 +1,5 @@
 import { UserService } from '../user.service';
-
+import { MatGridListModule } from '@angular/material/grid-list'; 
 
 import { Component, OnInit } from '@angular/core';
 
@@ -14,11 +14,22 @@ export class MainComponent implements OnInit {
 
   constructor(private posted: UserService) { }
 
+
+
+  logged(){
+    if (!this.posted.isLoggedIn()) { 
+        return false;
+      } else {
+        return true
+      }
+  }
+
   getProject(){
     this.posted.getProject().subscribe(objetos =>{ this.projects.push(objetos)
     this.projects = this.projects[1].message;    
 
-    console.log(this.projects);
+
+    console.log(this.projects[0].users[0].name);
 
     });    
   }

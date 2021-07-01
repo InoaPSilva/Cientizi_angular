@@ -5,7 +5,7 @@
 
             <!--========== Logo ==========-->
             <div class="nav-brand">
-                <a href="index.html">
+                <a [routerLink]="['/home']">
                     <img src="" alt="logo">
                 </a>
             </div>
@@ -15,13 +15,18 @@
                     <i class="icon ion-md-close"></i>
                 </div>
                 <li class="nav-item">
-                    <a href="#" class="nav-link current">Home</a>
+                    <a [routerLink]="['/home']" class="nav-link current">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="./login.html" class="nav-link">Login</a>
+                <li *ngIf="logged() == false" class="nav-item">
+                    <a [routerLink]="['/userlogin']" class="nav-link">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a href="./register.html" class="nav-link">Register</a>
+                <li *ngIf="logged() == false" class="nav-item">
+                    <a [routerLink]="['/userregister']" class="nav-link">Register</a>
+                </li>
+                <li *ngIf="logged() == true" class="nav-item">
+                    <a [routerLink]="['/user']">
+                        <img src="../../assets/img/avatar.svg" style="width: 55px; padding: 0; margin: 0;" alt="">
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -54,7 +59,7 @@
             <div class="content-box">
                 <h2>Crie sua campanha?</h2>
                 <div class="button-change">
-                    <a class="btn" href="#" style="padding:0 20px;">Crie uma campanha</a>
+                    <a class="btn" [routerLink]="['/projectregister']" style="padding:0 20px;">Crie uma campanha</a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -108,17 +113,15 @@
         <div class="border-wrapper">
             <h2>Projetos</h2>
         </div>
-        <mat-grid-list class="component_wrapper" cols="2" rowHeight="2:1">
+        <mat-grid-list class="component_wrapper" cols="4" rowHeight="4:6">
             <mat-grid-tile class="cards_wrap" *ngFor="let x of projects; index as i;">
                 <div class="card_item">
                     <div class="card_inner">
-                        <img src="../../assets/img/profile-pic.jpg" alt="">
+                        <img src="{{projects[i].icon}}" alt="">
                         <div class="role_name">{{projects[i].name}}</div>
-                        <div class="real_name">alguma coisa</div>
-                        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-                            dolorem
-                            mollitia odit labore dignissimos quidem necessitatibus error aperiam expedita, vero unde
-                            ipsa quo dolore! Deserunt, perferendis quod. Sit, amet.</div>
+                        <div class="real_name">{{this.projects[i].users[0].name}}</div>
+                        <div class="description">{{projects[i].description}}</div>
+                        <a [routerLink]="['/project', projects[i]._id]" class="btn">Veja mais</a>
                     </div>
                 </div>
             </mat-grid-tile>
