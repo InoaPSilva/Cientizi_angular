@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   });  
 
   constructor(private fb: FormBuilder,
-              private posted: UserService) {}
+              private posted: UserService,
+              private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -26,7 +28,9 @@ export class LoginComponent implements OnInit {
 
     this.posted.postCredentials(this.form.value);
     console.warn(this.form.value);
-    
+    if (this.posted.isLoggedIn()) {
+        this.router.navigate(['/home']); 
+      }
   }
 
 }

@@ -20,10 +20,6 @@ export class UserService {
   url = 'https://cientizi.herokuapp.com/';
 
 
-  intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(httpRequest).pipe(retry(2));
-  }
-
   getProfile(user:any){
     const head= new HttpHeaders({'Authorization': user})
 

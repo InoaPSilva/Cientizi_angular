@@ -1,7 +1,12 @@
     <!-- ========== NavBar ========== -->
     <ul class="topnav">
-        <li><a [routerLink]="['/userregister']">Register</a></li>
-        <li><a [routerLink]="['/userlogin']">Login</a></li>
+        <li><a *ngIf="logged() == false" [routerLink]="['/userregister']">Register</a></li>
+        <li><a *ngIf="logged() == false" [routerLink]="['/userlogin']">Login</a></li>
+        <li *ngIf="logged() == true" class="nav-item">
+            <a [routerLink]="['/user']">
+                <img src="../../assets/img/avatar.svg" style="width:30px; padding: 0; margin-bottom: 0;" alt="">
+            </a>
+        </li>
         <li><a [routerLink]="['/home']">Home</a></li>
     </ul>
     <!-- ========== Fim NavBar ==========  -->

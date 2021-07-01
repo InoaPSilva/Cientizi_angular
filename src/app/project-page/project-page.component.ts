@@ -35,6 +35,8 @@ export class ProjectPageComponent implements OnInit {
 
   }
 
+
+
   ngOnInit(): void {
     this.getProject(this.id);
 
