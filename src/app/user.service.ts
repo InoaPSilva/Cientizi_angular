@@ -23,9 +23,7 @@ export class UserService {
   getProfile(user:any){
     const head= new HttpHeaders({'Authorization': user})
 
-    return this.http.get(this.url + "user/profile", {headers: head}).subscribe(data=>{
-    console.log(data);
-    })
+    return this.http.get(this.url + "user/profile", {headers: head});
   }
 
   getProject(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from "../user.service";
 
 @Component({
   selector: 'app-user-page',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private posted: UserService) { }
+
+  user:any = [];
+
+  gettingUser(){
+    let localTkn = localStorage.token
+    this.posted.getProfile(localStorage.token).subscribe(data=>{
+      this.user = data
+    });
+        // this.projects = this.projects[0].message.find(function(x:any){return x._id === id});    
+
+    console.warn(this.user);
+    
+  }
+
 
   ngOnInit(): void {
+    this.gettingUser();
   }
 
 }
