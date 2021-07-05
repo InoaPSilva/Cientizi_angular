@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'userlogin', component: LoginComponent},
   {path:'userregister', component: RegisterComponent},
   {path: 'user', component:UserPageComponent, canActivate: [AuthGuard]},
-  {path:'', redirectTo:'/home', pathMatch: 'full'},
+  {path:'', redirectTo:'home', pathMatch: 'full'},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},
 ];
